@@ -17,7 +17,7 @@ INDEX_NAME = "faiss_index"
 def load_bart_model():
     model_name = "facebook/bart-large-cnn"
     tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForSeq2SeqGeneration.from_pretrained(model_name)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
     pipe = pipeline(
         "text2text-generation",
         model=model,
