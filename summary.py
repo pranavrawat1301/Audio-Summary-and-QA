@@ -1,22 +1,23 @@
 from audio_to_text import audio_file_to_text
-import torch
-from transformers import pipeline, AutoModelForSeq2SeqGeneration, AutoTokenizer
 import warnings
+from transformers import pipeline, AutoModelForSeq2SeqGeneration, AutoTokenizer
+import torch
 
 warnings.filterwarnings("ignore")
 
 # Initialize the summarizer with PyTorch backend explicitly
 model_name = "facebook/bart-large-cnn"
+device = "cuda" if torch.cuda.is_available() else "cpu"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForSeq2SeqGeneration.from_pretrained(model_name)
-summarizer = pipeline("summarization", model=model, tokenizer=tokenizer, framework="pt")
+model = AutoModelForSeq2SeqGeneration.from_pretrained(model_name).to(device)
+summarizer = pipeline("summarization", model=model, tokenizer=tokenizer, device=-1)
 
 def response_generator(file_path):
     try:
         searchDocs = audio_file_to_text(file_path)
         
-        # Adjust chunk size to avoid token length issues
-        chunk_size = 1000  # Reduced from 1024 to allow for some padding
+        # Adjust chunk size for token limits
+        chunk_size = 500  # Reduced chunk size
         chunks = [searchDocs[i:i+chunk_size] for i in range(0, len(searchDocs), chunk_size)]
         
         summaries = []
@@ -26,8 +27,8 @@ def response_generator(file_path):
                 
             try:
                 summary = summarizer(chunk, 
-                                   max_length=150, 
-                                   min_length=50, 
+                                   max_length=130, 
+                                   min_length=30, 
                                    do_sample=False,
                                    truncation=True)
                 summaries.append(summary[0]['summary_text'])
