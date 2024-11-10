@@ -1,4 +1,4 @@
-#from load_transcript import save_documents_to_faiss
+from load_transcript import save_documents_to_faiss
 
 
 # Run once to save to FAISS
