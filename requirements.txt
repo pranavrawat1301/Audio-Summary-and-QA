@@ -1,0 +1,9 @@
+streamlit
+assemblyai
+torch
+transformers
+langchain
+langchain-community
+faiss-cpu
+sentence-transformers
+tensorflow
