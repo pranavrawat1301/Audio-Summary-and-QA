@@ -1,6 +1,6 @@
 from audio_to_text import audio_file_to_text
 import warnings
-from transformers import pipeline, AutoModelForSeq2SeqGeneration, AutoTokenizer
+from transformers import pipeline, AutoModelForSeq2SeqLM, AutoTokenizer
 import torch
 
 warnings.filterwarnings("ignore")
