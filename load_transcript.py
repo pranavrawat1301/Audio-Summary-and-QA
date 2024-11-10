@@ -13,8 +13,8 @@ from langchain.chains import RetrievalQA
 from langchain_community.llms.huggingface_pipeline import HuggingFacePipeline
 
 
-TRANSCRIPTION_PATH = r"D:\Projects(internship)\LLM based Projects\Audio Summarizer\transcription.txt"
-FAISS_PATH = r"D:\Projects(internship)\LLM based Projects\Audio Summarizer\faiss_local"
+TRANSCRIPTION_PATH = "transcription.txt"  # Changed from absolute path
+FAISS_PATH = "faiss_local"  # Changed from absolute path
 INDEX_NAME = "faiss_index"
 
 
