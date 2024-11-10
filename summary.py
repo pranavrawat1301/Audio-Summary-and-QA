@@ -9,7 +9,7 @@ warnings.filterwarnings("ignore")
 model_name = "facebook/bart-large-cnn"
 device = "cuda" if torch.cuda.is_available() else "cpu"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForSeq2SeqGeneration.from_pretrained(model_name).to(device)
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name).to(device)
 summarizer = pipeline("summarization", model=model, tokenizer=tokenizer, device=-1)
 
 def response_generator(file_path):
