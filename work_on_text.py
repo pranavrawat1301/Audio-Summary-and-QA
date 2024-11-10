@@ -1,6 +1,6 @@
 import os
 import warnings
-from transformers import pipeline, AutoModelForSeq2SeqGeneration, AutoTokenizer
+from transformers import pipeline, AutoModelForSeq2SeqLM, AutoTokenizer
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -19,7 +19,7 @@ INDEX_NAME = "faiss_index"
 def load_bart_model():
     model_name = "facebook/bart-large-cnn"
     tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForSeq2SeqGeneration.from_pretrained(model_name)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
     pipe = pipeline(
         "text2text-generation",
         model=model,
