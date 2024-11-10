@@ -1,7 +1,7 @@
 from audio_to_text import audio_file_to_text
 import os
 import torch
-from transformers import AutoModelForSeq2SeqGeneration, AutoTokenizer, pipeline
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, pipeline
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
