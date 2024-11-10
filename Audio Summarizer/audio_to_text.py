@@ -2,8 +2,8 @@ import assemblyai as aai
 import os
 
 # Use a relative path
-TRANSCRIPTION_PATH = os.path.join(os.getcwd(), "transcription.txt")
-FAISS_PATH = os.path.join(os.getcwd(), "faiss_local")
+TRANSCRIPTION_PATH = "transcription.txt"  # Changed from absolute path
+FAISS_PATH = "faiss_local"  # Changed from absolute path
 INDEX_NAME = "faiss_index"
 
 def audio_file_to_text(file_path):
