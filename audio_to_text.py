@@ -1,8 +1,8 @@
 import assemblyai as aai
 
 
-TRANSCRIPTION_PATH = r"D:\Projects(internship)\LLM based Projects\Audio Summarizer\transcription.txt"
-FAISS_PATH = r"D:\f-ai\Pdf vocal query bot\faiss_local"
+TRANSCRIPTION_PATH = "transcription.txt"  # Changed from absolute path
+FAISS_PATH = "faiss_local"  # Changed from absolute path
 INDEX_NAME = "faiss_index"
 
 def audio_file_to_text(file_path):
