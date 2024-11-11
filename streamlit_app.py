@@ -77,7 +77,6 @@ def main():
         
     # Footer
     st.markdown("---")
-    st.markdown("Made with ❤️ using Streamlit")
 
 if __name__ == "__main__":
     main()
