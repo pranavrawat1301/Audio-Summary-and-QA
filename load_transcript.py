@@ -46,3 +46,9 @@ def save_documents_to_faiss(file_path):
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     db = FAISS.from_documents(split_docs, embeddings)
     db.save_local(folder_path=FAISS_PATH, index_name=INDEX_NAME)
+
+    '''text_splitter = CharacterTextSplitter(chunk_size=1024, chunk_overlap=200)
+    split_docs = text_splitter.split_text(text_content)
+    embeddings = HuggingFaceEmbeddings(model_name="all-mpnet-base-v2")
+    db = FAISS.from_texts(split_docs, embeddings)
+    db.save_local(folder_path=FAISS_PATH, index_name=INDEX_NAME)'''
