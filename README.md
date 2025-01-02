@@ -98,3 +98,20 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 - Hugging Face for their state-of-the-art NLP models.
 - FAISS for efficient similarity search solutions.
 - Streamlit for creating interactive web apps.
+
+
+---
+
+### **Some Screenshots of the StreamLit App**
+
+
+**Landing Page**
+![ss3](https://github.com/user-attachments/assets/e89eb2f5-cbb3-4e38-b432-f2ed7ae9e33d)
+
+
+**Summary**
+![ss1 (1)](https://github.com/user-attachments/assets/726ec687-2ed9-4753-ab34-9e07581a34c0)
+
+
+**Question-Answering**
+![ss2](https://github.com/user-attachments/assets/fd6d24de-3acc-458c-be15-b661fcdb2c0e)
